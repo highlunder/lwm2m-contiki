@@ -96,7 +96,8 @@ static const ipso_sensor_t hum_sensor = {
 lwm2m_status_t
 get_temp_value(const ipso_sensor_t *sensor, int32_t *value)
 {
-  *value = temp++;
+  temp -= 1000;
+  *value = temp;
   return LWM2M_STATUS_OK;
 }
 /*---------------------------------------------------------------------------*/

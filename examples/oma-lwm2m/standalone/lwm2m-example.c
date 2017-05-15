@@ -43,6 +43,7 @@
 #include "lwm2m-server.h"
 #include "lwm2m-security.h"
 #include "lwm2m-device.h"
+#include "ipso-digital-output.h"
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
@@ -73,7 +74,7 @@ callback(ntimer_t *timer)
 static void
 session_callback(struct lwm2m_session_info *si, int state)
 {
-  printf("Got Session Callback!!! %d\n", state);
+  printf("SHIC application callback!\n");
 }
 /*---------------------------------------------------------------------------*/
 #ifndef LWM2M_DEFAULT_RD_SERVER
@@ -113,8 +114,9 @@ start_application(int argc, char *argv[])
   lwm2m_engine_init();
 
   ipso_sensor_temp_init();
-  ipso_control_test_init();
-  ipso_blockwise_test_init();
+  //ipso_control_test_init();
+  //ipso_blockwise_test_init();
+  ipso_digital_output_init();
 
   /* Register default LWM2M objects */
   lwm2m_device_init();

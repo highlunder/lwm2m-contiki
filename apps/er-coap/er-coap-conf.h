@@ -47,7 +47,7 @@
 
 /* Listening port for the CoAP REST Engine */
 #ifndef COAP_SERVER_PORT
-#define COAP_SERVER_PORT               COAP_DEFAULT_PORT
+#define COAP_SERVER_PORT               COAP_DEFAULT_SERVER_PORT
 #endif
 
 /* The number of concurrent messages that can be stored for retransmission in the transaction layer. */
